@@ -3,7 +3,7 @@
 </div>
 </br>
 
-[Live demo](https://gpteams.astrasurge.com) (allowing only 3 conversations per hour.)
+[Live demo](https://chat-fedml.up.railway.app/)
 
 # GPTeams
 
