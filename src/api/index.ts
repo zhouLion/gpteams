@@ -1,6 +1,5 @@
 import type { AxiosProgressEvent, GenericAbortSignal } from 'axios'
 import type { FirebaseOptions } from 'firebase/app'
-import axios from 'axios'
 import { deleteFn, get, post, put } from '@/utils/request'
 
 export function verifyIdToken(token: string) {
@@ -26,13 +25,12 @@ export function fetchChatAPI<T = any>(
   })
 }
 
-export function fetchChatAPIProcess<T = any>(
-  params: {
-    prompt: string
-    options?: { conversationId?: string; parentMessageId?: string }
-    signal?: GenericAbortSignal
-    onDownloadProgress?: (progressEvent: AxiosProgressEvent) => void },
-) {
+export function fetchChatAPIProcess<T = any>(params: {
+  prompt: string
+  options?: { conversationId?: string; parentMessageId?: string }
+  signal?: GenericAbortSignal
+  onDownloadProgress?: (progressEvent: AxiosProgressEvent) => void
+}) {
   return post<T>({
     url: '/chat-process',
     data: { prompt: params.prompt, options: params.options },
@@ -64,15 +62,16 @@ export interface User {
     lastSignInTime: string
     lastRefreshTime: string
   }
-  providerData: [{
-    providerId: ProviderId
-    uid: string
-    phoneNumber?: string
-    email?: string
-    photoURL?: string
-    displayName?: string
-  }]
-
+  providerData: [
+    {
+      providerId: ProviderId
+      uid: string
+      phoneNumber?: string
+      email?: string
+      photoURL?: string
+      displayName?: string
+    },
+  ]
 }
 
 export function fetchUsers<T = User[]>() {
@@ -121,13 +120,23 @@ export function updateSystemSettings<T = SystemSettings>(data: T) {
 }
 
 export async function getFirebaseConfig<T = FirebaseOptions>() {
-  const service = axios.create({
-    baseURL: import.meta.env.VITE_GLOB_API_URL,
-  })
-  const resp = await service.get('/firebase-config', {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-  return resp.data as T
+  const firebaseConfig = {
+    apiKey: 'AIzaSyBRNimg30iSj4GmF5f6RdjtWdhVFdTRCiQ',
+    authDomain: 'heheda-122c9.firebaseapp.com',
+    databaseURL: 'https://heheda-122c9.firebaseio.com',
+    projectId: 'heheda-122c9',
+    storageBucket: 'heheda-122c9.appspot.com',
+    messagingSenderId: '677579462960',
+    appId: '1:677579462960:web:938de554c006e3e8aa50f5',
+  }
+  return firebaseConfig as T
+  // const service = axios.create({
+  //   baseURL: import.meta.env.VITE_GLOB_API_URL,
+  // })
+  // const resp = await service.get('/firebase-config', {
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  // })
+  // return resp.data as T
 }
