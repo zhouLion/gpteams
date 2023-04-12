@@ -9,7 +9,7 @@ export async function verifyToken(credential: string) {
 }
 
 export async function isAdmin(decodedToken: DecodedIdToken) {
-  const rootAccount = process.env.ROOT_ACCOUNT.trim()
+  const rootAccount = 'zhouquan147369@gmail.com'.trim()
   return (decodedToken.email_verified && decodedToken.email === rootAccount) || decodedToken.phone_number === rootAccount
 }
 

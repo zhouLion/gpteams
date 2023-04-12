@@ -73,13 +73,20 @@ router.post('/verify', async (req, res) => {
 
 router.get('/firebase-config', async (_, res) => {
   res.status(200).send({
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID,
-    measurementId: process.env.FIREBASE_MEASUREMENT_ID,
+    apiKey: 'AIzaSyBRNimg30iSj4GmF5f6RdjtWdhVFdTRCiQ',
+    authDomain: 'heheda-122c9.firebaseapp.com',
+    databaseURL: 'https://heheda-122c9.firebaseio.com',
+    projectId: 'heheda-122c9',
+    storageBucket: 'heheda-122c9.appspot.com',
+    messagingSenderId: '677579462960',
+    appId: '1:677579462960:web:938de554c006e3e8aa50f5',
+    // apiKey: process.env.FIREBASE_API_KEY,
+    // authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    // projectId: process.env.FIREBASE_PROJECT_ID,
+    // storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    // messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    // appId: process.env.FIREBASE_APP_ID,
+    // measurementId: process.env.FIREBASE_MEASUREMENT_ID,
   })
 })
 

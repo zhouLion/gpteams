@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv'
 
 dotenv.config()
 
-if (!process.env.ROOT_ACCOUNT)
+if (!'zhouquan147369@gmail.com')
   throw new Error('Missing ROOT_ACCOUNT environment variable')
 
 if (!process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON)
