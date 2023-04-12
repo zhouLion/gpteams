@@ -7,7 +7,7 @@
 1. https://github.com/gouguoyin/chatgpt-web (非开源项目)
 2. https://github.com/Kerwin1202/chatgpt-web
 
-[在线演示网站](https://gpteams.astrasurge.com) (每小时可以进行 3 次对话, 域名已被 DNS 污染)
+[在线演示网站](https://chat-fedml.up.railway.app/)
 
 # GPTeams
 
